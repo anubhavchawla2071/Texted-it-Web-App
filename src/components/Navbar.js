@@ -1,8 +1,13 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { useState } from "react";
 export default function Navbar(props) {
+  const handleDarkMode = () => {};
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav
+      className={`navbar navbar-expand-lg navbar-${props.theme}`} 
+      style={{backgroundColor:props.theme==='light' ?'#F6F6F6':'#292929'}}
+    >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {props.title}
@@ -31,12 +36,29 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div className={`form-check form-switch text-${props.theme==='light' ?'black':'light'}`}>
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              onClick={props.toggleMode}
+              
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              Enable dark Mode
+            </label>
+          </div>
         </div>
       </div>
     </nav>
   );
 }
-Navbar.propTypes={title:PropTypes.string.isRequired,
-                  aboutText:PropTypes.string};
-Navbar.defaultProps={title : "Set title here",
-                     aboutText : "About"};
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string,
+};
+Navbar.defaultProps = { title: "Set title here", aboutText: "About" };
