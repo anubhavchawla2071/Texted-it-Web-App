@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
@@ -25,6 +26,13 @@ export default function TextForm(props) {
 
   const handleOnChange = (event) => {
     setText(event.target.value);
+  };
+
+  const handleWordCount = (str) => {
+    // const arr = str.split(" ");
+    // console.log(arr);
+    return str.split(" ").filter((word)=> word.length>0).length;
+    // return arr.length;
   };
 
   return (
@@ -72,7 +80,7 @@ export default function TextForm(props) {
         </button>
       </div>
       <p style={{ color: props.theme === "light" ? "black" : "white" }}>
-        Words : {text.split(" ").length} and Characters : {text.length}
+        Words : {handleWordCount(text)} and Characters : {text.length}
       </p>
       <div style={{ color: props.theme === "light" ? "black" : "white" }}>
         <h4>Your preview :</h4>
