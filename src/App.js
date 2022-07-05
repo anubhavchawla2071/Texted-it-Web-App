@@ -35,10 +35,9 @@ function App() {
   };
   return (
     <>
-      {alert.msg && <Alert alert={alert} setAlert={setAlert} />}
       <Router>
       <Navbar title="Texted(it)" theme={mode} toggleMode={toggleMode} />
-
+      {alert.msg && <Alert alert={alert} setAlert={setAlert} />}
         <Routes>
           <Route exact path="/about" element={<About theme={mode} />} />
           <Route
