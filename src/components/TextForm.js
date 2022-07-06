@@ -37,7 +37,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container text-center my-4">
+      <div className="container text-center" style={{marginTop:'55px',marginBottom:'20px'}}>
         <h1 style={{ color: props.theme === "light" ? "black" : "white" }}>
           {props.heading}
         </h1>
