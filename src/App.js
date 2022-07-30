@@ -44,7 +44,7 @@ function App() {
             exact path="/"
             element={
               <div className="container my-3">
-                <TextForm heading="Enter text to analyse" theme={mode} />
+                <TextForm heading="Enter text you want to edit" theme={mode} />
               </div>
             }
           />

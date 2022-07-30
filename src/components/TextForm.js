@@ -38,9 +38,9 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container text-center" style={{marginTop:'55px',marginBottom:'20px'}}>
-        <h1 style={{ color: props.theme === "light" ? "black" : "white" }}>
+        <h2 style={{ color: props.theme === "light" ? "black" : "white" }}>
           {props.heading}
-        </h1>
+        </h2>
       </div>
       <div className="mb-3">
         <textarea
@@ -73,7 +73,7 @@ export default function TextForm(props) {
           Convert to lower case
         </button>
         <button className="btn btn-primary mx-2 my-3" onClick={handleSpace}>
-          Remove extra spaces
+          Remove extra space
         </button>
         <button className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
           Copy Text
