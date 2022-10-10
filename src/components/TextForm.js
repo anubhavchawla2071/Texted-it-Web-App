@@ -34,7 +34,10 @@ export default function TextForm(props) {
     return str.split(" ").filter((word)=> word.length>0).length;
     // return arr.length;
   };
-
+  const handleBold=()=>{
+    var element = document.getElementById("para");
+        element.style.fontWeight = "bold";
+  };
   return (
     <>
       <div className="container text-center" style={{marginTop:'55px',marginBottom:'20px'}}>
@@ -78,13 +81,16 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
           Copy Text
         </button>
+        <button className="btn btn-primary mx-2 my-3" onClick={handleBold}>
+          Bold text
+        </button>
       </div>
       <p style={{ color: props.theme === "light" ? "black" : "white" }}>
         Words : {handleWordCount(text)} and Characters : {text.length}
       </p>
       <div style={{ color: props.theme === "light" ? "black" : "white" }}>
         <h4>Your preview :</h4>
-        <p>{text}</p>
+        <p id="para">{text}</p>
       </div>
     </>
   );
