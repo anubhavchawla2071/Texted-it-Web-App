@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 export default function Navbar(props) {
   const handleDarkMode = () => {};
