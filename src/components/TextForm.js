@@ -38,6 +38,10 @@ export default function TextForm(props) {
     var element = document.getElementById("para");
         element.style.fontWeight = "bold";
   };
+  const handleItalic=()=>{
+    var element = document.getElementById("para");
+        element.style.fontStyle = "italic"
+  };
   return (
     <>
       <div className="container text-center" style={{marginTop:'55px',marginBottom:'20px'}}>
@@ -83,6 +87,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-2 my-3" onClick={handleBold}>
           Bold text
+        </button>
+        <button className="btn btn-primary mx-2 my-3" onClick={handleItalic}>
+          Italic text
         </button>
       </div>
       <p style={{ color: props.theme === "light" ? "black" : "white" }}>
